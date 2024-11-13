@@ -9,6 +9,7 @@
 /bats/
 /default-packages
 .idea
+.env
 *.un~
 
 
@@ -23,6 +24,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+
 .Python
 env/
 build/
