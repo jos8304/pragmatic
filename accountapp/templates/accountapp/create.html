@@ -1,10 +1,9 @@
 
 {% block content %}
-
-            <form action="{% url "accountapp:create" %}" method="POST">
-                {csf_token}
-                {{form}}
-                <input type="submit">
-            </form>
+<form action="{% url "accountapp:create" %}" method="POST">
+    {{csf_token}}
+    {{form}}
+    <input type="submit">
+</form>
 
 {% endblock %}
