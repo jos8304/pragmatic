@@ -2,10 +2,13 @@
 
 
 {% block content %}
-<form action="{% url "accountapp:create" %}" method="POST">
+<h1>Update Account</h1>
+<form action="{% url "accountapp:update" pk=target_user.pk %}" method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit">
 </form>
+
+
 
 {% endblock %}

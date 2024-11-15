@@ -1,13 +1,27 @@
-{%block content%}
-<div>
-  <div>
-    <h4>Login</h4>
-  </div>
-  <div>
-    <form action="{% url 'login' %}" method="post">
-      {% csrf_token %} {{form}}
-      <input type="submit" value="Login" />
-    </form>
+{% extends "base.html" %} {% load bootstrap4 %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Login</h5>
+          <form
+            class="form-signin"
+            action="{% url 'accountapp:login' %}"
+            method="post"
+          >
+            {% csrf_token %} {% bootstrap_form form %} {% buttons %}
+            <button
+              type="submit"
+              class="btn btn-primary btn-block text-uppercase"
+            >
+              Login
+            </button>
+            {% endbuttons %}
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}

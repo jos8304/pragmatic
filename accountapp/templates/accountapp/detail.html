@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{ target_user.date_joined }}</h1>
+      {% if target_user.profile %}
+      <p>{{ target_user.profile.nickname }}</p>
+      {% else %}
+      <p>
+        <a href="{% url 'profileapp:create' %}">Edit Profile</a>
+      </p>
+      {% endif %} {% if target_user == user %}
+      <p>
+        <a href="{% url 'accountapp:delete' pk=target_user.pk %}">delete</a>
+      </p>
+      {% endif %}
+      <hr />
+    </div>
+  </div>
+</div>
+
+{% endblock %}
